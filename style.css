@@ -1,0 +1,138 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.wrapper_folder {
+    margin:20px;
+    box-shadow: 0px 0px 7px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    background-color: #f0f2f5;
+    min-height: 150px;
+}
+
+.folder {
+    background-color: #0747a6;
+    position: absolute;
+    width: 30%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.close {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+    margin: 20px;
+}
+
+.hide_folder {
+    z-index: -1;
+}
+
+
+
+.sidebar {
+    width: 30%;
+    float: left;
+    min-height: 100vh;
+    background-color: #e8e8e8;
+}
+
+.dashboard {
+    display: contents;
+    width:70%;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list_cell, .list_folder {
+    flex-basis: calc(25% - 40px);
+    min-height: 150px;
+    margin: 20px;
+    list-style: none;
+    box-shadow: 0px 0px 7px 5px rgba(0,0,0,0.2);
+    background-color:#f0f2f5;
+}
+
+.err {
+    border: red 5px solid;
+    border-radius: 2px;
+}
+.success {
+    border: #26a69a 5px solid;
+    border-radius: 2px;
+}
+
+.list_folder {
+    cursor: pointer;
+    background-color: #0747a6;
+}
+
+
+.list_caption {
+    width: calc(25% - 40px);
+    margin: 0 20px;
+    list-style: none;
+    font-weight: bold;
+    color: #0747a6;
+}
+
+.list_card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100%;
+    cursor: all-scroll;
+}
+
+.list_card-header {
+    text-transform: lowercase;
+    font-weight: bold;
+    padding: 12px 20px;
+    background-color: #0747a6;
+    color: white;
+}
+
+.list_card-body, .list_folder-header  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eff5ff;
+    flex-grow: 1;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hovered {
+    background-color: #d1d8e2;
+}
+
+.hide {
+    display: none;
+}

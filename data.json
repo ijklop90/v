@@ -1,0 +1,14 @@
+[
+    {
+        "name": "name",
+        "data": "data",
+        "folder": 0,
+        "category": "eco"
+    },
+    {
+        "name": "name2",
+        "data": "data2",
+        "folder": 1,
+        "category": "ene"
+    }
+]
