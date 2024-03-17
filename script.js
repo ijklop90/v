@@ -5,10 +5,23 @@ import data from './data.js'
 const addCard = (text) => {
     const folder = document.querySelectorAll('.folder')
 
-    text.forEach(el=>{
+    const shuffle = (array) => {
+        let m = array.length, t, i;
+      
+        while (m) {
+          i = Math.floor(Math.random() * m--);
+          t = array[m];
+          array[m] = array[i];
+          array[i] = t;
+        }
+      
+        return array;
+      }
+
+
+    shuffle(text).forEach(el=>{
         folder[el.folder]
             .insertAdjacentHTML('beforeend', renderCard(el))
-            console.log(el.folder)
     })
 }
 
