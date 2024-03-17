@@ -1,71 +1,5 @@
 import renderCard from "./modules/card.js"
-const data = 
-[
-    {
-        name: "Причины",
-        data: "Производственная деятельность человека",
-        category: "eco",
-        folder: 0
-    },
-    {
-        name: "Причины",
-        data: "Темпы производства / падение рождаемости",
-        category: "demo",
-        folder: 0
-    },
-    {
-        name: "Причины",
-        data: "Исчерпание углеводов",
-        category: "ene",
-        folder: 0
-    },
-    {
-        name: "Причины",
-        data: "Гонка вооружений </br> Локальные конфликты",
-        category: "war",
-        folder: 0
-    },{
-        name: "Последствия",
-        data: "Нарушение климата, сокращение биоразнообразия",
-        category: "eco",
-        folder: 1
-    },{
-        name: "Последствия",
-        data: "Перенаселение / старение наций </br> Усиление проблемы \"север-юг\"",
-        category: "demo",
-        folder: 1
-    },{
-        name: "Последствия",
-        data: "Энергетический кризис",
-        category: "ene",
-        folder: 1
-    },{
-        name: "Последствия",
-        data: "Ядерная зима </br> Глобальная катастрофа",
-        category: "war",
-        folder: 1
-    },{
-        name: "Пути Решения",
-        data: "Разумное потребление </br> Переработка отходов </br> Эволюция технологий производства",
-        category: "eco",
-        folder: 2
-    },{
-        name: "Пути Решения",
-        data: "Грамотная демографическая политика",
-        category: "demo",
-        folder: 2
-    },{
-        name: "Пути Решения",
-        data: "Поиск альтернативных источников энергии",
-        category: "ene",
-        folder: 2
-    },{
-        name: "Пути Решения",
-        data: "Мирное сосуществование </br> Переговоры </br> Общее разоружение",
-        category: "war",
-        folder: 2
-    }
-]
+import data from './data.js'
 
 
 const addCard = (text) => {
@@ -89,11 +23,14 @@ const dragAndDrop = async  (fetchData) => {
         f=this
         setTimeout(() => {
             this.classList.add('hide')
+            console.log(234)
         }, 0)
     }
     
     const dragEnd = function () {
-            this.classList.remove('hide')
+        this.classList.remove('hide')
+        this.classList.remove('success')
+        this.classList.remove('err')
     }
 
     const dragOver = function (event) {
@@ -105,45 +42,37 @@ const dragAndDrop = async  (fetchData) => {
         event.preventDefault()
         this.classList.add('hovered')
         this.classList.remove('err')
-        this.classList.remove('success')
-    }    
-    
-    const touchMove = function(event) {
-        event.preventDefault()
-        this.style.position='absolute'
-        // console.log(this.style)
     }
     
     const dragLeave = function () {
         this.classList.remove('hovered')
     }
 
+    const drop = function () {
+        if(this.childNodes.length<=1){
+            this.append(f)
+            if(f.classList[1]===this.classList[1]&&f.classList[3]===this.classList[3]) {
+                f.draggable = false;
+                this.classList.add('success')
+                console.log(f.style.cursor = "no-drop")
+            }else{
+                this.classList.add('err')
+            }
+            this.classList.remove('hovered')
+        }
+    }
 
     cells.forEach((el) => {
-        let id;
         el.addEventListener('dragover', dragOver)
         el.addEventListener('dragenter', dragEnter)
         el.addEventListener('touchenter', dragEnter)
         el.addEventListener('dragleave', dragLeave)
-        el.addEventListener('drop', function() {
-                this.append(f)
-                if(f.classList[1]===this.classList[1]) {
-                    this.classList.add('success')
-                }else{
-                    this.classList.add('err')
-                }
-                // console.log(f.classList[1])
-                // console.log(this.classList[1])
-                this.classList.remove('hovered')
-        })
+        el.addEventListener('drop', drop)
     })
 
     card.forEach(el => {
         el.addEventListener('dragstart', dragStart)
         el.addEventListener('dragend', dragEnd)
-        // el.addEventListener('touchstart', dragStart)
-        // el.addEventListener('touchmove', touchMove)
-        // el.addEventListener('touchend', dragEnd)
     })
 }
 
