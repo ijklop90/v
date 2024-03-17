@@ -5,7 +5,7 @@ export default function renderCard(data) {
         <div class="list_card-header">${data.name}</div>
         <div class="list_card-body">${data.data}</div>
     </div>
-    </div>
+    </div> 
     `
     return fragment
 }
