@@ -8,6 +8,7 @@ const addCard = (text) => {
     text.forEach(el=>{
         folder[el.folder]
             .insertAdjacentHTML('beforeend', renderCard(el))
+            console.log(el.folder)
     })
 }
 

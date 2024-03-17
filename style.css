@@ -110,7 +110,7 @@ body {
 }
 
 .list_card-header {
-    text-transform: lowercase;
+    text-transform: uppercase;
     font-weight: bold;
     padding: 12px 20px;
     background-color: #0747a6;
