@@ -9,6 +9,9 @@ body {
     font-size: 16px;
     line-height: normal;
     font-weight: 400;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://4kwallpapers.com/images/wallpapers/earth-space-stars-green-solaris-water-sea-3840x2160-2051.jpg");
 }
 
 .hero {
@@ -25,11 +28,12 @@ body {
     box-shadow: 0px 0px 7px 5px rgba(0,0,0,0.2);
     overflow: hidden;
     background-color: #f0f2f5;
-    min-height: 150px;
+    min-height: 140px;
+    background-color: #363c46;
 }
 
 .folder {
-    background-color: #0747a6;
+    background-color: #1e2635;
     position: absolute;
     width: 30%;
     min-height: 100%;
@@ -54,7 +58,7 @@ body {
     width: 30%;
     float: left;
     min-height: 100vh;
-    background-color: #e8e8e8;
+    background-color: #1e2635;
 }
 
 .dashboard {
@@ -74,21 +78,22 @@ body {
     margin: 20px;
     list-style: none;
     box-shadow: 0px 0px 7px 5px rgba(0,0,0,0.2);
-    background-color:#f0f2f5;
+    background-color: #8080809c;
+    border-radius: 5px;
 }
 
 .err {
-    border: red 5px solid;
+    border: #d52e2e 5px solid;
     border-radius: 2px;
 }
 .success {
-    border: #26a69a 5px solid;
+    border: #33a845 5px solid;
     border-radius: 2px;
 }
 
 .list_folder {
     cursor: pointer;
-    background-color: #0747a6;
+    background-color: #214062;
 }
 
 
@@ -97,7 +102,7 @@ body {
     margin: 0 20px;
     list-style: none;
     font-weight: bold;
-    color: #0747a6;
+    color: #ffecdd;
 }
 
 .list_card {
@@ -106,15 +111,19 @@ body {
     flex-direction: column;
     text-align: center;
     min-height: 100%;
-    /* cursor: all-scroll; */
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    user-select: none; /* Стандартный синтаксис */
+    min-height: 150px;
 }
 
 .list_card-header {
     text-transform: uppercase;
     font-weight: bold;
     padding: 12px 20px;
-    background-color: #0747a6;
-    color: white;
+    background-color: #214062;
+    color: #ffecdd;
 }
 
 .list_card-body, .list_folder-header  {
@@ -130,7 +139,7 @@ body {
 }
 
 .hovered {
-    background-color: #d1d8e2;
+    background-color: #153460d4;
 }
 
 .hide {

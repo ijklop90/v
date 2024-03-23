@@ -1,10 +1,23 @@
-import renderCard from "./modules/card.js"
+import renderCard from "./render/card.js"
+import renderGrid from "./render/grid.js"
 import data from './data.js'
 
 
+const addGrid = () => {
+    const grid = document.getElementById('li')
+    const cat = ["eco", "ene", "demo"]
+    const line = ["first", "second", "third", "fourth", "fifth"]
+    
+    line.forEach(x=>{
+        cat.forEach(y=>{
+            grid.insertAdjacentHTML('beforeend', renderGrid(y, x))
+        })
+    })
+    
+}
+
 const addCard = (text) => {
     const folder = document.querySelectorAll('.folder')
-
     const shuffle = (array) => {
         let m = array.length, t, i;
       
@@ -14,10 +27,8 @@ const addCard = (text) => {
           array[m] = array[i];
           array[i] = t;
         }
-      
         return array;
       }
-
 
     shuffle(text).forEach(el=>{
         folder[el.folder]
@@ -107,7 +118,7 @@ const openFolder = () => {
         })
     })
 }
-
+addGrid();
 addCard(data);
 openFolder();
 dragAndDrop(data)
