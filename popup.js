@@ -1,7 +1,7 @@
 import alert from './render/alert.js'
 export default function popup(num) {
     const root = document.getElementById('root')
-    if(num>=1){
+    if(num>=15){
         alert(root)
         closeAlert()
     }
